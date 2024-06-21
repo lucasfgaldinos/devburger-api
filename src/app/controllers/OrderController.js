@@ -94,7 +94,7 @@ class OrderController {
         const { status } = req.body
 
         try {
-            await Order.updateOne({ _id: id }, { status })
+            await Order.updateMany({ _id: id }, { status })
         } catch (err) {
             return res.status(400).json({ error: err.message })
         }
